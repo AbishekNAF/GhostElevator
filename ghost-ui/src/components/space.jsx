@@ -1,6 +1,6 @@
 import React from "react";
 
-function Space({
+function space({
   peopleCoordinates,
   updatePeopleCoordinates,
   space_noo,

@@ -3,7 +3,7 @@ import "./App.css";
 import ControlPanel from "./components/ControlPanel";
 import Floors from "./components/Floors";
 import LiftShaft from "./components/LiftShaft";
-import { useState } from "react";
+// import { useState } from "react";
 function App() {
   let no_of_floors = 5;
   let no_of_spaces = 6;
@@ -13,7 +13,7 @@ function App() {
     { name: "🧍‍♀️", floor_no: 0, space_no: 1 },
     { name: "🕴", floor_no: 0, space_no: 2 },
     { name: "⛹️‍♀️", floor_no: 0, space_no: 3 },
-    { name: "", floor_no: 0, space_no: 4 },
+    { name: "🤸‍♂️", floor_no: 0, space_no: 4 },
   ]);
 
   const updatePeopleCoordinates = (name, direction) => {
@@ -34,8 +34,8 @@ function App() {
     );
   };
 
-  const[style, setStyle] = useState({});
-  const[door, setDoor] = useState(false);
+  const [style, setStyle] = useState({});
+  const [door, setDoor] = useState(false);
 
   return (
     <div className="App main-grid">
@@ -48,13 +48,23 @@ function App() {
         />
       </div>
       <div className="main-grid-item elevator-shaft">
-        <LiftShaft style={style} setStyle={setStyle} door={door} setDoor={setDoor}/>
+        <LiftShaft
+          style={style}
+          setStyle={setStyle}
+          door={door}
+          setDoor={setDoor}
+        />
       </div>
       <div className="main-grid-item">
-        <ControlPanel style={style} setStyle={setStyle} setDoor={setDoor} door={door}
-peopleCoordinates={peopleCoordinates}
+        <ControlPanel
+          style={style}
+          setStyle={setStyle}
+          setDoor={setDoor}
+          door={door}
+          peopleCoordinates={peopleCoordinates}
           updatePeopleCoordinates={updatePeopleCoordinates}
-/>      </div>
+        />{" "}
+      </div>
     </div>
   );
 }
